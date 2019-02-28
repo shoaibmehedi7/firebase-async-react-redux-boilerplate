@@ -20,7 +20,7 @@ var obj = {
   email: "email",
   password: "asfdds"
 };
-// firebase async call
+// firebase async
 export const signinAction = async obj => {
   var errorMessage = "emnei";
   let response = await firebase

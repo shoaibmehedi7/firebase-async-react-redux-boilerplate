@@ -1,7 +1,7 @@
 import { firebase } from "./initial";
-export const signupp = async (email, password) => {
+export const signupp =  (email, password) => {
   console.log("pressed button null");
-  var a = await firebase
+  var a =  firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(function() {
