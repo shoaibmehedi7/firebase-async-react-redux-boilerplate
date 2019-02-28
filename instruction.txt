@@ -1,0 +1,2 @@
+when make a call from inside action the function needs to be async. but when using function and return from function bottom then no need to use async..............but async function works same as those way
+
