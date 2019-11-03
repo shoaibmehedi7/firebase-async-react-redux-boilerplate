@@ -1,6 +1,12 @@
 import { signupp } from "../Firebase/SignupFireAuth";
 import { firebase } from "../Firebase/initial";
+
+var root = firebase.firestore();
+
+
 var init = null;
+
+
 
 export function counter() {
   console.log("on action : ");
@@ -49,3 +55,27 @@ export function signinActiondemoAlter(signinObj) {
     payload: init
   };
 }
+
+
+export const fetchAndReturnFoods = async () => {
+	var data = [];
+	try {
+		await root.collection("foods").get().then(function (querySnapshot) {
+			querySnapshot.forEach(function (doc) {
+				data.push(doc.data());
+			});
+		});
+		return {
+			type: "FOODS",
+			payload: data
+		};
+	} catch (error) {
+		if (!error.response) {
+			throw error;
+		} else {
+			throw error;
+		}
+	}
+};
+
+

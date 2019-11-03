@@ -6,6 +6,9 @@ import { bindActionCreators } from "redux";
 //import action
 import { counter, signinAction } from "../actions/index";
 
+
+import ViewFoods from './foodView'
+
 // import react-bootstrap
 import { Form, Button } from "react-bootstrap";
 class Home extends Component {
@@ -38,7 +41,7 @@ class Home extends Component {
     return (
       <div className="App">
         <form>
-          <input
+          {/* <input
             id="orgEmail"
             onChange={this.onInputChangeEmail}
             label="Organization Email"
@@ -54,8 +57,9 @@ class Home extends Component {
           />
           <button variant="primary" type="submit" onClick={this.handleSubmit}>
             Submit
-          </button>
+          </button> */}
           <h1>{this.props.user}</h1>
+          <ViewFoods />
         </form>
       </div>
     );
